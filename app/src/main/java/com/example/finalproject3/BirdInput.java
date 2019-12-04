@@ -98,6 +98,7 @@ public class BirdInput extends AppCompatActivity implements View.OnClickListener
             Intent SearchIntent = new Intent(this, Search.class);
             startActivity(SearchIntent);
         } else if (item.getItemId() == R.id.itemLogout) {
+            FirebaseAuth.getInstance().signOut(); //actually signing out the user
             Intent LogoutIntent = new Intent(this, MainActivity.class);
             startActivity(LogoutIntent);
         }
