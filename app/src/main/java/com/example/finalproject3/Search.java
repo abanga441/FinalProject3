@@ -56,7 +56,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
         if(v == buttonSearch){
             if(editTextZipCodeSearch.getText().toString().trim().equalsIgnoreCase("")) {
-                editTextZipCodeSearch.setError("This cannot be blank. Please enter a Zip Code."); //this doesn't seem to be working
+                editTextZipCodeSearch.setError("This cannot be blank. Please enter a Zip Code.");
             } else {
                 try {
                     Integer zipTest =Integer.parseInt(editTextZipCodeSearch.getText().toString());
