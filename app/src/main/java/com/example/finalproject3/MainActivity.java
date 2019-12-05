@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void successfulSignIn() {
-        Intent Login = new Intent(this, BirdInput.class);
+        Intent Login = new Intent(this, ImportanceRank.class);
         startActivity(Login);
     }
 

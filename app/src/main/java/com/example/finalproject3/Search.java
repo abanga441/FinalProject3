@@ -55,18 +55,16 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         final DatabaseReference myRef = database.getReference("birdsightings");
 
         if(v == buttonSearch){
-            if(editTextZipCodeSearch.getText().toString().trim().equalsIgnoreCase("")) {
-                editTextZipCodeSearch.setError("This cannot be blank. Please enter a Zip Code.");
+
+            if (editTextZipCodeSearch.getText().toString().trim().equalsIgnoreCase("")) {
+                editTextZipCodeSearch.setError("Zip Code is Empty"); //this isn't working and I can't explain it
             } else {
                 try {
-                    Integer zipTest =Integer.parseInt(editTextZipCodeSearch.getText().toString());
+                    Integer zipTest = Integer.parseInt(editTextZipCodeSearch.getText().toString());
                 } catch (Exception e) {
-                    editTextZipCodeSearch.setError("This must be a numeric value.");
-                    return;
-
+                    editTextZipCodeSearch.setError("Please Enter a Numerical Value");
                 }
             }
-
 
             Integer findZipCode = Integer.parseInt(editTextZipCodeSearch.getText().toString());
 
@@ -184,6 +182,9 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
             FirebaseAuth.getInstance().signOut(); //actually signing out the user
             Intent LogoutIntent = new Intent(this, MainActivity.class);
             startActivity(LogoutIntent);
+        } else if(item.getItemId() == R.id.itemRank) {
+            Intent RankIntent = new Intent(this, ImportanceRank.class);
+            startActivity(RankIntent);
         }
 
         return super.onOptionsItemSelected(item);

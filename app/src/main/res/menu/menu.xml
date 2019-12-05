@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/itemRank"
+        android:title="Importance Rank" />
+    <item
         android:id="@+id/itemBirdInput"
         android:title="Bird Info Input" />
     <item
